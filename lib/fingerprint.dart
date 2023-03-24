@@ -153,9 +153,9 @@ class _FingerprintState extends State<Fingerprint> {
               Slider(
                 value: tolerance, 
                 label: tolerance.toStringAsFixed(2),
-                thumbColor: Color.fromARGB(255, 34, 34, 34),
+                thumbColor: const Color.fromARGB(255, 34, 34, 34),
                 activeColor: const Color.fromARGB(255, 59, 59, 59),
-                inactiveColor: Color.fromARGB(255, 176, 176, 176),
+                inactiveColor: const Color.fromARGB(255, 176, 176, 176),
                 divisions: 30,
                 onChanged: (double value) {
                   setState(() {

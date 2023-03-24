@@ -8,10 +8,12 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:barcode_scanner/generate_qr_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,13 +22,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: const MyHomePage(),
     );
   }
 }
 
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key key}) : super(key: key);
+
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -131,10 +135,10 @@ class _MyHomePageState extends State<MyHomePage> {
               Center(
                 child: ElevatedButton(
                   onPressed: _launchURL,
-                  child: const Text('Відкрити посилання'),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 59, 59, 59),
                   ),
+                  child: const Text('Відкрити посилання'),
                 ),
               ),
           ],

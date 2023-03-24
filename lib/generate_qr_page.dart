@@ -17,7 +17,7 @@ OutlineInputBorder textFieldStyle = OutlineInputBorder(
 
 
 class GenerateQRCode extends StatefulWidget {
-  const GenerateQRCode();
+  const GenerateQRCode({super.key});
 
   @override
   _GenerateQRCodeState createState() => _GenerateQRCodeState();
@@ -34,7 +34,7 @@ class _GenerateQRCodeState extends State<GenerateQRCode> {
     RenderRepaintBoundary boundary = _key.currentContext!.findRenderObject() as RenderRepaintBoundary;
 
     if (boundary.debugNeedsPaint) {
-      Timer(Duration(seconds: 1), () => _saveToGallery());
+      Timer(const Duration(seconds: 1), () => _saveToGallery());
       return null;
     }
 
@@ -60,7 +60,7 @@ class _GenerateQRCodeState extends State<GenerateQRCode> {
       fontSize: 16,
       timeInSecForIosWeb: 2,
       gravity: ToastGravity.BOTTOM,
-      backgroundColor: Color.fromARGB(255, 208, 208, 208),
+      backgroundColor: const Color.fromARGB(255, 208, 208, 208),
     );
   }
 
@@ -93,7 +93,7 @@ class _GenerateQRCodeState extends State<GenerateQRCode> {
                         TextStyle(fontSize: 12, color: Colors.grey.shade400),
                     labelStyle:
                         TextStyle(fontSize: 12, color: Colors.grey.shade400),
-                    contentPadding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                    contentPadding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                     focusedBorder: textFieldStyle,
                     enabledBorder: textFieldStyle,
                   ),
@@ -117,7 +117,7 @@ class _GenerateQRCodeState extends State<GenerateQRCode> {
                           
                           body: QrImage(
                               data: text,
-                              padding: EdgeInsets.all(30),
+                              padding: const EdgeInsets.all(30),
                             ),
 
                           floatingActionButton: FloatingActionButton.extended(
